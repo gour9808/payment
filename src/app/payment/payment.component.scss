@@ -15,21 +15,21 @@
     transition: all 0.4s;
 }
 .content {
-    padding: 1.4rem 1.2rem 2.2rem 1.2rem;
+    padding: 1rem;
 }
 .text {
     color: #2f2f2f;
     font-weight: bold;
 }
 .text2 {
-    color: #1e1e1e;
+    color: #222222;
     font-weight: bold;
 }
 
 .btn-txt {
-    color: #542f86;
-    font-weight: bold;
-    font-size: 16px;
+    color: #66378a;
+    font-weight: bolder;
+    font-size: 14px;
 }
 
 .powered {
@@ -51,8 +51,7 @@
 }
 
 .img2 {
-    height: 40px;
-    width: 40px;
+    width: 28px;
 }
 
 .mr {
@@ -61,5 +60,48 @@
 
 .two-btns {
     float: right;
-    margin-top: 1.5rem;
+    margin-top: .5rem;
+}
+
+.paid-to-text {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.user-id {
+    color: #767676;
+    font-size: 1.1rem;
+}
+
+.user-name {
+    font-size: 21px;
+}
+
+.rupee {
+    font-size: 18px;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.ff {
+    font-family: 'Oswald', sans-serif;
+}
+
+.bank-text-first {
+    color: #181818;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.bank-text-sec {
+    color: #343434;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.contact-text {
+    color: #333333;
+    font-weight: 600;
 }
