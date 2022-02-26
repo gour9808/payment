@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PaymentComponent } from './payment/payment.component';
+import { PaymentContainerComponent } from './payment-container/payment-container.component';
+import { PaymentHistoryDetailsComponent } from './payment-history-details/payment-history-details.component';
+import { PaymentHistoryComponent } from './payment-history/payment-history.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'payment', pathMatch: 'full' },
-  { path: 'payment', component: PaymentComponent },
+  { path: 'payment', component: PaymentContainerComponent },
+  { path: 'payment-detail', component: PaymentHistoryDetailsComponent },
+  { path: 'payment-history', component: PaymentHistoryComponent },
+
+
 ];
 
 @NgModule({

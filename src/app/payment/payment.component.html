@@ -60,15 +60,11 @@
     opacity: 0.8;
   }
 
- 
-
-
   .trans-color {
     color: #effaf3;
     font-weight: 600;
     font-size: 17px;
   }
-
 
   .time {
     font-size: 13px;
@@ -76,34 +72,48 @@
   }
 
   /* Responsive Styles */
- 
 </style>
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <div
-  class="toolbar-row"
-  style="width: 100%; display: flex; justify-content: space-between"
->
-<span style="margin-left: 8px;">No SIM</span>
-  <!-- <img src="../assets/signal.svg" /> -->
-  <div style="text-align: center">
-    <p class="time">1:16 PM</p>
+    class="toolbar-row"
+    style="width: 100%; display: flex; justify-content: space-between"
+  >
+    <span style="margin-left: 8px">No SIM</span>
+    <!-- <img src="../assets/signal.svg" /> -->
+    <div style="text-align: center">
+      <p class="time">{{data.time}}</p>
+    </div>
+    <span style="margin-right: 10px">90%</span>
+    <!-- <img src="../assets/icons8-full-battery-30.png" width="30px" /> -->
   </div>
-  <span style="margin-right: 10px;">90%</span>
-  <!-- <img src="../assets/icons8-full-battery-30.png" width="30px" /> -->
 
-
-</div>
-  
   <div
     class="toolbar-row"
     style="width: 100%; display: flex; justify-content: space-between"
+    *ngIf = "icon !=='BACK'"
+
   >
     <img src="../assets/close.svg" />
     <div style="text-align: center">
       <p class="trans-color">Transaction Successful</p>
-      <p style="font-size: 14px; color: #bff8ab">29 December 2022 At 1:16 PM</p>
+      <p style="font-size: 14px; color: #bff8ab">{{data.date}}</p>
+    </div>
+    <!-- <div class="spacer"></div> -->
+    <img src="../assets/share.svg" width="30px" />
+  </div>
+  <div
+    class="toolbar-row"
+    style="width: 100%; display: flex; justify-content: space-between"
+    *ngIf = "icon ==='BACK'"
+  >
+  <i class="fa fa-angle-left back"></i>
+
+    <!-- <img src="../assets/close.svg" /> -->
+    <div style="text-align: center">
+      <p class="trans-color">Transaction Successful</p>
+      <p style="font-size: 14px; color: #bff8ab">{{data.date}}</p>
     </div>
     <!-- <div class="spacer"></div> -->
     <img src="../assets/share.svg" width="30px" />
@@ -118,7 +128,7 @@
       </div>
       <div class="row">
         <div class="col-8">
-          <span class="text2"> T0987654321234567890098765 </span>
+          <span class="text2"> {{data.transactionId}} </span>
         </div>
         <div class="col-1"></div>
         <div class="col-3">
@@ -138,11 +148,13 @@
           <img src="./../../assets/phonepe.png" width="48px" />
         </div>
         <div class="col-7" style="margin-top: -8px">
-          <p class="text mb-0 user-name">{{ name }}</p>
-          <p class="user-id fw-500">2354323456</p>
+          <p class="text mb-0 user-name">{{ data.name }}</p>
+          <p class="user-id fw-500">{{data.userId}}</p>
         </div>
         <div class="col-3">
-          <span class="text rupee"> <span class="rupee"> &#x20b9;</span> 1,000</span>
+          <span class="text rupee">
+            <span class="rupee"> &#x20b9;</span> {{data.money}}</span
+          >
         </div>
       </div>
 
@@ -162,21 +174,23 @@
 
   <div class="card mb">
     <div class="content">
-      <h4 class="card-title paid-to-text ">Debited From</h4>
+      <h4 class="card-title paid-to-text">Debited From</h4>
       <div class="row">
         <div class="col-2">
           <img src="./../../assets/sbi.png" width="48px" />
         </div>
         <div class="col-7">
-          <span class="bank-text-first"> IDFC Bank first - 9700 </span>
+          <span class="bank-text-first"> {{data.bankName}} </span>
         </div>
         <div class="col-3">
-          <span class="text rupee"> <span class="rupee"> &#x20b9;</span> 1,000</span>
+          <span class="text rupee">
+            <span class="rupee"> &#x20b9;</span> {{data.money}}</span
+          >
         </div>
       </div>
       <div class="row">
         <div class="col-2"></div>
-        <div class="col-7  bank-text-sec">UTR: 124321234567</div>
+        <div class="col-7 bank-text-sec">UTR: {{data.utr}}</div>
         <div class="col-3"></div>
       </div>
     </div>
@@ -185,7 +199,7 @@
   <!-- Last card support -->
 
   <div class="card mb">
-    <div class="content" >
+    <div class="content">
       <img src="./../../assets/help.png" class="img2" />
 
       <span class="contact-text" style="margin-left: 1rem; font-size: 16px">
@@ -198,7 +212,7 @@
 
   <div style="display: flex; flex-direction: column">
     <span class="powered"> Powered By </span>
-    <div class="text-center" style="margin-top: -1rem;">
+    <div class="text-center" style="margin-top: -1rem">
       <img src="./../../assets/upi.png" class="img" />
       <img src="./../../assets/yes2.png" class="img" />
     </div>

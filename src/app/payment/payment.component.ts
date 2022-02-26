@@ -1,4 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+interface paymentData {
+  transactionId: string,
+    name: string,
+    userId: string,
+    money: number,
+    bankName: string,
+    utr: string,
+    date: string,
+    time: string
+}
 
 @Component({
   selector: 'app-payment',
@@ -7,10 +18,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentComponent implements OnInit {
 
+  @Input() icon: string = "BACK";
+  @Input() data: paymentData ;
+
+
   name = "Gourav Sharma";
-  constructor() { }
+  constructor() {
+  this.data = {
+    transactionId:  "",
+    name: "",
+    userId: "",
+    money: 10,
+    bankName: "",
+    utr: "",
+    date: "",
+    time: ""
+  }
+   }
 
   ngOnInit(): void {
+    console.log(this.data);
+    
   }
 
 }
